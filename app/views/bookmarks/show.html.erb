@@ -2,12 +2,7 @@
 
 <p>
   <strong>Url:</strong>
-  <%= @bookmark.url %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @bookmark.title %>
+  <%= link_to @bookmark.title, @bookmark.url %>
 </p>
 
 <%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
