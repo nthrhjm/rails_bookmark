@@ -3,9 +3,9 @@ class Bookmark < ApplicationRecord
 
   def fetch_title
     begin
-      url = URI.parse(url)
+      uri = URI.parse(url)
       response = Net::HTTP.get(uri).force_encoding(Encoding::UTF_8)
-      capture = /<title>(?<title>.+)<\/title>/m.match(response).named_captures
+      captures   = /<title>(?<title>.+)<\/title>/m.match(response).named_captures
       self.title = captures['title']
     rescue => e
       logger.warn "Fetch Title Failed.url = [#{url}],error = #{e.message}"
