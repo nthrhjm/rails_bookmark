@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: rails_bookmark_production
+#  database: rails_bookmark_production
+  url: <%= ENV['DATABASE_URL'] %>
   username: rails_bookmark
   password: <%= ENV['RAILS_BOOKMARK_DATABASE_PASSWORD'] %>
