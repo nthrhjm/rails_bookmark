@@ -49,4 +49,16 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # デバッグ
-gem 'pry-rails'
+gem 'pry-byebug'
+
+# 文字列の中のリンクをいい感じに
+gem 'rails_autolink'
+
+#検索機能
+gem 'ransack'
+
+#pagination
+gem 'kaminari'
+
+
+gem 'bootstrap'
