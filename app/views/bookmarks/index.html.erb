@@ -1,27 +1,30 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Bookmarks</h1>
-
-<table>
-  <thead>
+<header class="header mb-5">
+  <h2>Bookmarks</h2>
+</header>
+<div class="wrapper mb-5">
+  <table>
+    <thead>
     <tr>
       <th>Url</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td><%= link_to bookmark.title,bookmark.url %></td>
+        <td><%= link_to bookmark.title, bookmark.url %></td>
         <td><%= link_to 'Show', bookmark %></td>
+
         <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', bookmark, method: :delete, data: {confirm: "#{bookmark.title ||= bookmark.url} を削除します。よろしいですか？"} %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<%= link_to 'New Bookmark', new_bookmark_path %>
+  <%= link_to 'New Bookmark', new_bookmark_path %>
+</div>
