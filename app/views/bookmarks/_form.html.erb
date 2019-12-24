@@ -13,11 +13,12 @@
 
   <div class="field">
     <%= form.label :url %>
-    <%= form.text_field :url %>
+    <%= form.text_field :url, class: "form-control" %>
   </div>
 
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions" >
+    <%= form.submit class: "btn btn-secondary"%>
+
   </div>
 <% end %>
