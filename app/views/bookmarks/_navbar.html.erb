@@ -1,0 +1,24 @@
+<nav class="navbar navbar-light mb-3">
+  <h1 class="navbar-brand">Bookmarks</h1>
+
+  <div class="user_status">
+    <% if user_signed_in? %>
+      <div>
+        <%=  current_user.name %>
+        <%= link_to edit_user_registration_path do %>
+          <%= 'edit' %>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete, class: "ml-2", data: {confirm: "ログアウトします。よろしいですか？"} do %>
+          <%= 'logout' %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= link_to new_user_session_path, class: "mr-2" do %>
+        <%= 'login' %>
+      <% end %>
+      <%= link_to new_user_registration_path, class: "" do %>
+        <%= 'sign up' %>
+      <% end %>
+    <% end %>
+  </div>
+</nav>

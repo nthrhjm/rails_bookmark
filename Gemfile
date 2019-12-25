@@ -62,3 +62,5 @@ gem 'kaminari'
 
 
 gem 'bootstrap'
+
+gem 'devise'
